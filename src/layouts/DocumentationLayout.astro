@@ -1,0 +1,36 @@
+---
+import Navbar from "../components/NavbarDocumentation.astro";
+import Footer from "../components/Footer.astro";
+import Sidebar from "../components/Sidebar.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="src/styles/global.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>EF Article Builder | Dokumentasi</title>
+  </head>
+  <body class="font-sans antialiased">
+    <Navbar />
+    <div class="flex pt-16">
+      <Sidebar />
+      <slot />
+    </div>
+
+    <button
+      id="scrollTop"
+      class="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-purple-600 to-blue-500 text-white rounded-full shadow-lg hover:shadow-2xl hover:scale-110 transition-all duration-300 opacity-0 pointer-events-none z-50"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="../../public/js/documentation.js"></script>
+  </body>
+</html>

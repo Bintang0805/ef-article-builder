@@ -1,0 +1,65 @@
+---
+interface Props {
+  lang?: string;
+  code: string;
+}
+
+const { lang = "Code", code } = Astro.props;
+
+// fungsi untuk hilangkan indentasi yang tidak diinginkan
+function normalizeIndent(str: string) {
+  const lines = str.replace(/^\n+|\n+$/g, "").split("\n");
+  const indents = lines
+    .filter((line) => line.trim().length > 0)
+    .map((line) => line.match(/^(\s*)/)?.[1].length ?? 0);
+  const minIndent = Math.min(...indents);
+  return lines.map((line) => line.slice(minIndent)).join("\n");
+}
+
+function escapeHtml(str: string) {
+  return str.replace(/&/g, "&amp;");
+}
+
+const formattedCode = escapeHtml(normalizeIndent(code));
+---
+
+<div class="bg-gray-900 rounded-xl overflow-hidden mb-6">
+  <!-- Header -->
+  <div
+    class="bg-gray-800 px-4 py-2 border-b border-gray-700 flex items-center justify-between"
+  >
+    <span class="text-gray-300 text-sm font-mono">{lang}</span>
+    <button
+      class="copy-btn text-gray-400 hover:text-white text-sm flex items-center gap-1 transition"
+    >
+      <i class="fas fa-copy text-xs"></i> Copy
+    </button>
+  </div>
+
+  <!-- Code Area -->
+  <pre
+    class="p-4 overflow-x-auto"><code class="text-sm text-gray-300">{formattedCode}</code></pre>
+</div>
+
+<!-- Script dijalankan di browser -->
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const containers = document.querySelectorAll(".copy-btn");
+    containers.forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        const parent = btn.closest("div")?.parentElement;
+        const codeEl = parent?.querySelector("pre code");
+        if (!codeEl) return;
+
+        try {
+          await navigator.clipboard.writeText(codeEl.textContent);
+          const original = btn.innerHTML;
+          btn.innerHTML = "✅ Copied!";
+          setTimeout(() => (btn.innerHTML = original), 1500);
+        } catch {
+          alert("Gagal menyalin teks.");
+        }
+      });
+    });
+  });
+</script>

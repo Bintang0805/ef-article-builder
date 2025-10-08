@@ -1,0 +1,1988 @@
+---
+import DocumentationLayout from "../layouts/DocumentationLayout.astro";
+import CodeBlock from "../components/CodeBlock.astro";
+---
+
+<DocumentationLayout>
+  <main class="flex-1 lg:ml-64 px-4 sm:px-6 lg:px-8 py-8 max-w-5xl">
+    <!-- Introduction Section -->
+    <section id="introduction" class="mb-16">
+      <div
+        class="bg-gradient-to-r from-purple-600 to-blue-500 text-white rounded-2xl p-8 mb-8"
+      >
+        <h1 class="text-4xl font-bold mb-4">Dokumentasi EF Article Builder</h1>
+        <p class="text-lg text-purple-100">
+          Panduan lengkap untuk menggunakan EF Article Builder dalam proyek Anda
+        </p>
+        <div class="flex items-center space-x-4 mt-6">
+          <span class="bg-white/20 px-4 py-2 rounded-lg text-sm font-semibold"
+            >v1.0.0</span
+          >
+          <span class="bg-white/20 px-4 py-2 rounded-lg text-sm font-semibold"
+            >JavaScript</span
+          >
+          <span class="bg-white/20 px-4 py-2 rounded-lg text-sm font-semibold"
+            >MIT License</span
+          >
+        </div>
+      </div>
+
+      <div class="prose max-w-none">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          Apa itu EF Article Builder?
+        </h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          EF Article Builder adalah JavaScript library modern yang memungkinkan
+          Anda membuat builder artikel dengan antarmuka drag-and-drop yang
+          intuitif. Library ini dilengkapi dengan berbagai komponen siap pakai
+          yang dapat disesuaikan dengan kebutuhan Anda.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-8">
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <div
+              class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-hand-pointer text-purple-600 text-xl"></i>
+            </div>
+            <h3 class="font-bold text-gray-900 mb-2">Mudah Digunakan</h3>
+            <p class="text-sm text-gray-600">
+              Interface drag-and-drop yang intuitif tanpa perlu coding
+            </p>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <div
+              class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-cubes text-blue-600 text-xl"></i>
+            </div>
+            <h3 class="font-bold text-gray-900 mb-2">40+ Komponen</h3>
+            <p class="text-sm text-gray-600">
+              Berbagai komponen dari gratis hingga premium
+            </p>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <div
+              class="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-palette text-pink-600 text-xl"></i>
+            </div>
+            <h3 class="font-bold text-gray-900 mb-2">Customizable</h3>
+            <p class="text-sm text-gray-600">
+              Theme dan konfigurasi yang fleksibel
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Fitur Utama</h2>
+
+      <div
+        class="bg-white border border-gray-200 rounded-xl overflow-hidden mb-4"
+      >
+        <div class="p-6 border-b border-gray-200 bg-gray-50">
+          <div class="flex items-center space-x-3">
+            <i class="fas fa-check-circle text-green-500 text-xl"></i>
+            <h3 class="font-bold text-gray-900">Drag & Drop Interface</h3>
+          </div>
+        </div>
+        <div class="p-6">
+          <p class="text-gray-600">
+            Susun konten artikel dengan mudah menggunakan sistem drag-and-drop.
+            Cukup pilih komponen dari sidebar dan seret ke canvas builder.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="bg-white border border-gray-200 rounded-xl overflow-hidden mb-4"
+      >
+        <div class="p-6 border-b border-gray-200 bg-gray-50">
+          <div class="flex items-center space-x-3">
+            <i class="fas fa-check-circle text-green-500 text-xl"></i>
+            <h3 class="font-bold text-gray-900">Live Preview</h3>
+          </div>
+        </div>
+        <div class="p-6">
+          <p class="text-gray-600">
+            Lihat hasil akhir artikel Anda secara real-time saat mengedit. Mode
+            live preview menampilkan tampilan final tanpa perlu refresh.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="bg-white border border-gray-200 rounded-xl overflow-hidden mb-4"
+      >
+        <div class="p-6 border-b border-gray-200 bg-gray-50">
+          <div class="flex items-center space-x-3">
+            <i class="fas fa-check-circle text-green-500 text-xl"></i>
+            <h3 class="font-bold text-gray-900">Multiple Themes</h3>
+          </div>
+        </div>
+        <div class="p-6">
+          <p class="text-gray-600 mb-4">
+            Pilih dari berbagai tema siap pakai atau buat tema custom Anda
+            sendiri:
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-center space-x-2">
+              <span class="w-4 h-4 bg-purple-500 rounded"></span>
+              <span class="text-sm text-gray-700">Glassmorphism</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="w-4 h-4 bg-blue-500 rounded"></span>
+              <span class="text-sm text-gray-700">Simple Modern</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="w-4 h-4 bg-yellow-500 rounded"></span>
+              <span class="text-sm text-gray-700">Colorful</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="w-4 h-4 bg-gray-800 rounded"></span>
+              <span class="text-sm text-gray-700">Dark Professional</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+        <div class="p-6 border-b border-gray-200 bg-gray-50">
+          <div class="flex items-center space-x-3">
+            <i class="fas fa-check-circle text-green-500 text-xl"></i>
+            <h3 class="font-bold text-gray-900">Export & Import</h3>
+          </div>
+        </div>
+        <div class="p-6">
+          <p class="text-gray-600">
+            Export konten dalam format HTML atau JSON. Support untuk import data
+            kembali ke builder untuk editing lebih lanjut.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Requirements Section -->
+    <section id="requirements" class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Persyaratan Sistem</h2>
+
+      <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-6">
+        <div class="flex items-start space-x-3">
+          <i class="fas fa-info-circle text-blue-600 text-xl mt-1"></i>
+          <div>
+            <h3 class="font-bold text-blue-900 mb-2">Browser Support</h3>
+            <p class="text-blue-800 text-sm">
+              EF Article Builder mendukung semua browser modern (Chrome, Firefox,
+              Safari, Edge) versi terbaru.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead class="bg-gray-50 border-b border-gray-200">
+              <tr>
+                <th
+                  class="px-6 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider"
+                >
+                  Dependency</th
+                >
+                <th
+                  class="px-6 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider"
+                >
+                  Versi</th
+                >
+                <th
+                  class="px-6 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider"
+                >
+                  Required</th
+                >
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr>
+                <td class="px-6 py-4 text-sm text-gray-900">FontAwesome</td>
+                <td class="px-6 py-4 text-sm text-gray-600">5.x atau 6.x</td>
+                <td class="px-6 py-4"
+                  ><span
+                    class="px-3 py-1 bg-green-100 text-green-800 text-xs font-semibold rounded-full"
+                    >Ya</span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm text-gray-900">Modern Browser</td>
+                <td class="px-6 py-4 text-sm text-gray-600">ES6 Support</td>
+                <td class="px-6 py-4"
+                  ><span
+                    class="px-3 py-1 bg-green-100 text-green-800 text-xs font-semibold rounded-full"
+                    >Ya</span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm text-gray-900">jQuery</td>
+                <td class="px-6 py-4 text-sm text-gray-600">-</td>
+                <td class="px-6 py-4"
+                  ><span
+                    class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-semibold rounded-full"
+                    >Tidak</span
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section id="download" class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        Download & Instalasi
+      </h2>
+
+      <div
+        class="bg-gradient-to-r from-purple-50 to-blue-50 border border-purple-200 rounded-xl p-6 mb-6"
+      >
+        <h3 class="font-bold text-gray-900 mb-4 text-xl">Download File</h3>
+        <p class="text-gray-600 mb-6">
+          Download file library dari GitHub atau website resmi:
+        </p>
+        <div class="grid md:grid-cols-2 gap-4">
+          <a
+            href="#"
+            class="block bg-white border-2 border-purple-300 rounded-xl p-4 hover:shadow-lg transition-all"
+          >
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-bold text-gray-900">Versi Gratis</span>
+              <i class="fas fa-download text-purple-600"></i>
+            </div>
+            <p class="text-sm text-gray-600">15 komponen dasar</p>
+          </a>
+          <a
+            href="#"
+            class="block bg-gradient-to-r from-purple-600 to-blue-500 text-white rounded-xl p-4 hover:shadow-lg transition-all"
+          >
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-bold">Versi Premium</span>
+              <i class="fas fa-crown"></i>
+            </div>
+            <p class="text-sm text-purple-100">40+ komponen premium</p>
+          </a>
+        </div>
+      </div>
+
+      <h3 id="setup" class="text-2xl font-bold text-gray-900 mb-4">
+        Setup Files
+      </h3>
+      <p class="text-gray-600 mb-4">
+        Setelah download, ekstrak file dan masukkan ke dalam project Anda:
+      </p>
+
+      <CodeBlock
+        lang="Struktur File"
+        code={`
+        project/
+        ├── assets/
+        │   ├── css/
+        │   │   └── ef-article-builder.css
+        │   └── js/
+        │       └── ef-article-builder.js
+        └── index.html
+        `}
+      />
+
+      <h3 class="text-2xl font-bold text-gray-900 mb-4">Include Files</h3>
+      <p class="text-gray-600 mb-4">
+        Tambahkan file CSS dan JS ke dalam HTML Anda:
+      </p>
+
+      <CodeBlock
+        lang="HTML"
+        code={`
+        <!-- CSS -->
+        <link rel="stylesheet" href="assets/css/ef-article-builder.css">
+
+        <!-- FontAwesome (Required) -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+        <!-- JavaScript (Before closing body tag) -->
+        <script src="assets/js/ef-article-builder.js"></script>`}
+      />
+    </section>
+
+    <!-- Basic Usage Section -->
+    <section id="basic-usage" class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Penggunaan Dasar</h2>
+
+      <h3 class="text-xl font-bold text-gray-900 mb-4">
+        1. Buat Container HTML
+      </h3>
+      <CodeBlock
+        lang="HTML"
+        code={`
+      <div id="my-builder"></div>
+      `}
+      />
+
+      <h3 class="text-xl font-bold text-gray-900 mb-4">2. Initialize Builder</h3>
+      Code
+      <CodeBlock
+        lang="JavaScript"
+        code={`
+        const builder = new EfArticleBuilder('#my-builder', {
+                        builderTheme: 'glassmorphism',
+                        contentTheme: 'glassmorphism',
+                        displayMode: 'inline',
+                        locale: 'id'
+                    });`}
+      />
+      <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+        <div class="flex items-start space-x-3">
+          <i class="fas fa-check-circle text-green-600 text-xl mt-1"></i>
+          <div>
+            <h3 class="font-bold text-green-900 mb-2">Selesai!</h3>
+            <p class="text-green-800 text-sm">
+              Builder Anda sudah siap digunakan. Pengguna dapat mulai drag
+              komponen dan membuat artikel.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Options Section -->
+    <section id="options" class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        Configuration Options
+      </h2>
+
+      <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead class="bg-gray-50 border-b border-gray-200">
+              <tr>
+                <th
+                  class="px-6 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider"
+                >
+                  Option</th
+                >
+                <th
+                  class="px-6 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider"
+                >
+                  Type</th
+                >
+                <th
+                  class="px-6 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider"
+                >
+                  Default</th
+                >
+                <th
+                  class="px-6 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider"
+                >
+                  Deskripsi</th
+                >
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr>
+                <td class="px-6 py-4 text-sm font-mono text-purple-600"
+                  >builderTheme</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-600">String | Object</td>
+                <td class="px-6 py-4 text-sm font-mono text-gray-900"
+                  >'glassmorphism'</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-600"
+                  >Tema untuk interface builder</td
+                >
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm font-mono text-purple-600"
+                  >contentTheme</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-600">String | Object</td>
+                <td class="px-6 py-4 text-sm font-mono text-gray-900">null</td>
+                <td class="px-6 py-4 text-sm text-gray-600"
+                  >Tema untuk output konten</td
+                >
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm font-mono text-purple-600"
+                  >displayMode</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-600">String</td>
+                <td class="px-6 py-4 text-sm font-mono text-gray-900"
+                  >'inline'</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-600"
+                  >Mode tampilan: inline, inline-limited, compact</td
+                >
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm font-mono text-purple-600"
+                  >maxHeight</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-600">String</td>
+                <td class="px-6 py-4 text-sm font-mono text-gray-900"
+                  >'600px'</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-600"
+                  >Tinggi maksimal builder (untuk inline-limited)</td
+                >
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm font-mono text-purple-600"
+                  >locale</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-600">String</td>
+                <td class="px-6 py-4 text-sm font-mono text-gray-900">'id'</td>
+                <td class="px-6 py-4 text-sm text-gray-600"
+                  >Bahasa interface (id/en)</td
+                >
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm font-mono text-purple-600"
+                  >compactButtonText</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-600">String</td>
+                <td class="px-6 py-4 text-sm font-mono text-gray-900"
+                  >'Open Builder'</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-600"
+                  >Teks tombol untuk compact mode</td
+                >
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm font-mono text-purple-600"
+                  >licenseKey</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-600">String</td>
+                <td class="px-6 py-4 text-sm font-mono text-gray-900">null</td>
+                <td class="px-6 py-4 text-sm text-gray-600"
+                  >License key untuk fitur premium</td
+                >
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm font-mono text-purple-600"
+                  >initialContent</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-600">String | Array</td>
+                <td class="px-6 py-4 text-sm font-mono text-gray-900">null</td>
+                <td class="px-6 py-4 text-sm text-gray-600"
+                  >Konten awal (HTML atau JSON)</td
+                >
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm font-mono text-purple-600"
+                  >onChange</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-600">Function</td>
+                <td class="px-6 py-4 text-sm font-mono text-gray-900">null</td>
+                <td class="px-6 py-4 text-sm text-gray-600"
+                  >Callback saat konten berubah</td
+                >
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm font-mono text-purple-600"
+                  >onReady</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-600">Function</td>
+                <td class="px-6 py-4 text-sm font-mono text-gray-900">null</td>
+                <td class="px-6 py-4 text-sm text-gray-600"
+                  >Callback saat builder siap</td
+                >
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm font-mono text-purple-600"
+                  >onSave</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-600">Function</td>
+                <td class="px-6 py-4 text-sm font-mono text-gray-900">null</td>
+                <td class="px-6 py-4 text-sm text-gray-600"
+                  >Callback saat menyimpan</td
+                >
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Themes Section -->
+    <section id="themes" class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Themes</h2>
+
+      <p class="text-gray-600 mb-6">
+        EF Article Builder menyediakan beberapa tema siap pakai yang dapat Anda
+        gunakan:
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <div
+            class="h-32 bg-gradient-to-br from-purple-600 to-blue-500 flex items-center justify-center"
+          >
+            <span class="text-white font-bold text-lg">Glassmorphism</span>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-gray-900 mb-2">Glassmorphism</h3>
+            <p class="text-sm text-gray-600 mb-3">
+              Tema dengan efek kaca modern dan gradient yang elegan
+            </p>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded text-purple-600"
+              >builderTheme: 'glassmorphism'</code
+            >
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <div
+            class="h-32 bg-gray-100 flex items-center justify-center border-b border-gray-300"
+          >
+            <span class="text-gray-800 font-bold text-lg">Simple Modern</span>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-gray-900 mb-2">Simple Modern</h3>
+            <p class="text-sm text-gray-600 mb-3">
+              Tema minimalis dengan warna netral dan clean
+            </p>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded text-purple-600"
+              >builderTheme: 'simple-modern'</code
+            >
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <div
+            class="h-32 bg-gradient-to-br from-yellow-300 to-orange-400 flex items-center justify-center"
+          >
+            <span class="text-gray-800 font-bold text-lg">Colorful</span>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-gray-900 mb-2">Colorful</h3>
+            <p class="text-sm text-gray-600 mb-3">
+              Tema penuh warna dengan gradient cerah
+            </p>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded text-purple-600"
+              >builderTheme: 'colorful'</code
+            >
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <div class="h-32 bg-gray-900 flex items-center justify-center">
+            <span class="text-white font-bold text-lg">Dark Professional</span>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-gray-900 mb-2">Dark Professional</h3>
+            <p class="text-sm text-gray-600 mb-3">
+              Tema gelap profesional untuk mode malam
+            </p>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded text-purple-600"
+              >builderTheme: 'dark-professional'</code
+            >
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-xl font-bold text-gray-900 mb-4">Custom Theme</h3>
+      <p class="text-gray-600 mb-4">
+        Anda juga dapat membuat tema custom dengan mendefinisikan CSS variables:
+      </p>
+
+      <CodeBlock
+        lang="JavaScript"
+        code={`
+        const builder = new EfArticleBuilder('#my-builder', {
+            builderTheme: {
+                '--ef-bg': '#ffffff',
+                '--ef-card-bg': '#f8f9fa',
+                '--ef-text-primary': '#212529',
+                '--ef-text-secondary': '#6c757d'
+            },
+            contentTheme: 'simple-modern'
+        });
+      `}
+      />
+    </section>
+
+    <!-- Display Modes Section -->
+    <section id="display-modes" class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Display Modes</h2>
+
+      <div class="space-y-6">
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <div
+            class="p-6 border-b border-gray-200 bg-gradient-to-r from-purple-50 to-blue-50"
+          >
+            <h3 class="font-bold text-gray-900 text-lg mb-2">Inline Mode</h3>
+            <code class="text-sm bg-white px-3 py-1 rounded text-purple-600"
+              >displayMode: 'inline'</code
+            >
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600 mb-4">
+              Mode default. Builder ditampilkan langsung di halaman tanpa batasan
+              tinggi.
+            </p>
+            <div class="bg-gray-50 border border-gray-200 rounded-lg p-4">
+              <p class="text-sm text-gray-600 mb-2">
+                <strong>Kapan digunakan:</strong>
+              </p>
+              <ul class="text-sm text-gray-600 space-y-1 list-disc list-inside">
+                <li>Halaman dedicated untuk editing</li>
+                <li>Admin panel</li>
+                <li>Form pembuatan konten utama</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <div
+            class="p-6 border-b border-gray-200 bg-gradient-to-r from-blue-50 to-indigo-50"
+          >
+            <h3 class="font-bold text-gray-900 text-lg mb-2">
+              Inline Limited Mode
+            </h3>
+            <code class="text-sm bg-white px-3 py-1 rounded text-purple-600"
+              >displayMode: 'inline-limited'</code
+            >
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600 mb-4">
+              Builder dengan tinggi maksimal yang dapat di-scroll. Ideal untuk
+              form yang panjang.
+            </p>
+            <div class="bg-gray-50 border border-gray-200 rounded-lg p-4">
+              <p class="text-sm text-gray-600 mb-2">
+                <strong>Konfigurasi:</strong>
+              </p>
+              <div class="bg-gray-900 rounded-lg p-3">
+                <code class="text-xs text-gray-300"
+                  >displayMode: 'inline-limited', maxHeight: '600px'</code
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <div
+            class="p-6 border-b border-gray-200 bg-gradient-to-r from-pink-50 to-purple-50"
+          >
+            <h3 class="font-bold text-gray-900 text-lg mb-2">Compact Mode</h3>
+            <code class="text-sm bg-white px-3 py-1 rounded text-purple-600"
+              >displayMode: 'compact'</code
+            >
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600 mb-4">
+              Builder disembunyikan di balik tombol. User klik tombol untuk
+              membuka builder.
+            </p>
+            <div class="bg-gray-50 border border-gray-200 rounded-lg p-4">
+              <p class="text-sm text-gray-600 mb-2">
+                <strong>Kapan digunakan:</strong>
+              </p>
+              <ul class="text-sm text-gray-600 space-y-1 list-disc list-inside">
+                <li>Form dengan banyak field</li>
+                <li>Builder opsional dalam form</li>
+                <li>Hemat space di halaman</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Free Components Section -->
+    <section id="free-components" class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Komponen Gratis</h2>
+
+      <p class="text-gray-600 mb-6">
+        Versi gratis menyediakan 15 komponen dasar untuk membuat artikel:
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-white border border-gray-200 rounded-lg p-4">
+          <div class="flex items-center space-x-3 mb-2">
+            <div
+              class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center"
+            >
+              <i class="fas fa-heading text-purple-600"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900">H2, H3, H4</h4>
+              <p class="text-xs text-gray-500">Heading berbagai level</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-4">
+          <div class="flex items-center space-x-3 mb-2">
+            <div
+              class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center"
+            >
+              <i class="fas fa-paragraph text-blue-600"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900">Paragraph</h4>
+              <p class="text-xs text-gray-500">Paragraf biasa & large</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-4">
+          <div class="flex items-center space-x-3 mb-2">
+            <div
+              class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center"
+            >
+              <i class="fas fa-list-ol text-green-600"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900">Ordered List</h4>
+              <p class="text-xs text-gray-500">List dengan nomor</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-4">
+          <div class="flex items-center space-x-3 mb-2">
+            <div
+              class="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center"
+            >
+              <i class="fas fa-list-ul text-yellow-600"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900">Unordered List</h4>
+              <p class="text-xs text-gray-500">List dengan bullet</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-4">
+          <div class="flex items-center space-x-3 mb-2">
+            <div
+              class="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center"
+            >
+              <i class="fas fa-code text-pink-600"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900">Code Block</h4>
+              <p class="text-xs text-gray-500">Block kode program</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-4">
+          <div class="flex items-center space-x-3 mb-2">
+            <div
+              class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center"
+            >
+              <i class="fas fa-image text-indigo-600"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900">Image</h4>
+              <p class="text-xs text-gray-500">Gambar dengan caption</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-4">
+          <div class="flex items-center space-x-3 mb-2">
+            <div
+              class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center"
+            >
+              <i class="fas fa-video text-red-600"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900">Embed</h4>
+              <p class="text-xs text-gray-500">YouTube, Vimeo, iframe</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-4">
+          <div class="flex items-center space-x-3 mb-2">
+            <div
+              class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center"
+            >
+              <i class="fas fa-minus text-gray-600"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900">Dividers</h4>
+              <p class="text-xs text-gray-500">
+                5 jenis pembatas (line, dashed, dotted, gradient, text)
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Premium Components Section -->
+    <section id="premium-components" class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Komponen Premium</h2>
+
+      <div
+        class="bg-gradient-to-r from-purple-600 to-blue-500 text-white rounded-xl p-6 mb-6"
+      >
+        <div class="flex items-center space-x-3 mb-4">
+          <i class="fas fa-crown text-3xl"></i>
+          <div>
+            <h3 class="text-xl font-bold">Upgrade ke Premium</h3>
+            <p class="text-purple-100">
+              Dapatkan akses ke 40+ komponen premium
+            </p>
+          </div>
+        </div>
+        <a
+          href="#premium-license"
+          class="inline-block bg-white text-purple-600 px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition-all"
+        >
+          Lihat Detail Premium
+        </a>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Tip Blocks -->
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <div
+            class="p-4 bg-gradient-to-r from-purple-50 to-blue-50 border-b border-gray-200"
+          >
+            <h3 class="font-bold text-gray-900 flex items-center space-x-2">
+              <i class="fas fa-lightbulb text-purple-600"></i>
+              <span>Tip Blocks (10 variants)</span>
+              <span
+                class="ml-auto px-3 py-1 bg-purple-600 text-white text-xs rounded-full"
+                >Premium</span
+              >
+            </h3>
+          </div>
+          <div class="p-4">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-2">
+              <div class="text-center p-3 bg-blue-50 rounded-lg">
+                <i class="fas fa-info-circle text-blue-600 text-xl mb-1"></i>
+                <p class="text-xs text-gray-700">Info</p>
+              </div>
+              <div class="text-center p-3 bg-green-50 rounded-lg">
+                <i class="fas fa-check-circle text-green-600 text-xl mb-1"></i>
+                <p class="text-xs text-gray-700">Success</p>
+              </div>
+              <div class="text-center p-3 bg-yellow-50 rounded-lg">
+                <i
+                  class="fas fa-exclamation-triangle text-yellow-600 text-xl mb-1"
+                ></i>
+                <p class="text-xs text-gray-700">Warning</p>
+              </div>
+              <div class="text-center p-3 bg-red-50 rounded-lg">
+                <i class="fas fa-exclamation-circle text-red-600 text-xl mb-1"
+                ></i>
+                <p class="text-xs text-gray-700">Danger</p>
+              </div>
+              <div class="text-center p-3 bg-gray-50 rounded-lg">
+                <i class="fas fa-sticky-note text-gray-600 text-xl mb-1"></i>
+                <p class="text-xs text-gray-700">Note</p>
+              </div>
+              <div class="text-center p-3 bg-purple-50 rounded-lg">
+                <i class="fas fa-question-circle text-purple-600 text-xl mb-1"
+                ></i>
+                <p class="text-xs text-gray-700">Question</p>
+              </div>
+              <div class="text-center p-3 bg-pink-50 rounded-lg">
+                <i class="fas fa-star text-pink-600 text-xl mb-1"></i>
+                <p class="text-xs text-gray-700">Pro Tip</p>
+              </div>
+              <div class="text-center p-3 bg-indigo-50 rounded-lg">
+                <i class="fas fa-check-square text-indigo-600 text-xl mb-1"></i>
+                <p class="text-xs text-gray-700">Best Practice</p>
+              </div>
+              <div class="text-center p-3 bg-orange-50 rounded-lg">
+                <i class="fas fa-quote-left text-orange-600 text-xl mb-1"></i>
+                <p class="text-xs text-gray-700">Quote</p>
+              </div>
+              <div class="text-center p-3 bg-teal-50 rounded-lg">
+                <i class="fas fa-list-ol text-teal-600 text-xl mb-1"></i>
+                <p class="text-xs text-gray-700">Steps</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cards -->
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <div
+            class="p-4 bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-gray-200"
+          >
+            <h3 class="font-bold text-gray-900 flex items-center space-x-2">
+              <i class="fas fa-square text-blue-600"></i>
+              <span>Card Components (7 variants)</span>
+              <span
+                class="ml-auto px-3 py-1 bg-blue-600 text-white text-xs rounded-full"
+                >Premium</span
+              >
+            </h3>
+          </div>
+          <div class="p-4">
+            <ul class="grid md:grid-cols-2 gap-2">
+              <li class="flex items-center space-x-2 text-sm text-gray-700">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Basic Card</span>
+              </li>
+              <li class="flex items-center space-x-2 text-sm text-gray-700">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Image Card</span>
+              </li>
+              <li class="flex items-center space-x-2 text-sm text-gray-700">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Icon Top Card</span>
+              </li>
+              <li class="flex items-center space-x-2 text-sm text-gray-700">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Hover Card</span>
+              </li>
+              <li class="flex items-center space-x-2 text-sm text-gray-700">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Bordered Card</span>
+              </li>
+              <li class="flex items-center space-x-2 text-sm text-gray-700">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Gradient Card</span>
+              </li>
+              <li class="flex items-center space-x-2 text-sm text-gray-700">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Statistic Card</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Other Premium Components -->
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-white border border-gray-200 rounded-lg p-4">
+            <h4
+              class="font-bold text-gray-900 mb-2 flex items-center space-x-2"
+            >
+              <i class="fas fa-th text-pink-600"></i>
+              <span>Grid Layouts</span>
+            </h4>
+            <p class="text-sm text-gray-600 mb-3">
+              3 variants: 2-column, 3-column, masonry
+            </p>
+            <span
+              class="px-2 py-1 bg-pink-100 text-pink-700 text-xs rounded-full"
+              >Premium</span
+            >
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-lg p-4">
+            <h4
+              class="font-bold text-gray-900 mb-2 flex items-center space-x-2"
+            >
+              <i class="fas fa-bullhorn text-green-600"></i>
+              <span>Call to Action</span>
+            </h4>
+            <p class="text-sm text-gray-600 mb-3">
+              5 variants: center, split, minimal, urgent, newsletter
+            </p>
+            <span
+              class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full"
+              >Premium</span
+            >
+          </div>
+
+          div class="bg-white border border-gray-200 rounded-lg p-4">
+          <h4 class="font-bold text-gray-900 mb-2 flex items-center space-x-2">
+            <i class="fas fa-table text-blue-600"></i>
+            <span>Tables</span>
+          </h4>
+          <p class="text-sm text-gray-600 mb-3">
+            3 variants: basic, striped, comparison
+          </p>
+          <span class="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full"
+            >Premium</span
+          >
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-4">
+          <h4 class="font-bold text-gray-900 mb-2 flex items-center space-x-2">
+            <i class="fas fa-stream text-purple-600"></i>
+            <span>Timeline</span>
+          </h4>
+          <p class="text-sm text-gray-600 mb-3">
+            2 variants: vertical, horizontal
+          </p>
+          <span
+            class="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded-full"
+            >Premium</span
+          >
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-4">
+          <h4 class="font-bold text-gray-900 mb-2 flex items-center space-x-2">
+            <i class="fas fa-chevron-down text-indigo-600"></i>
+            <span>Accordion</span>
+          </h4>
+          <p class="text-sm text-gray-600 mb-3">2 variants: FAQ, simple</p>
+          <span
+            class="px-2 py-1 bg-indigo-100 text-indigo-700 text-xs rounded-full"
+            >Premium</span
+          >
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-4">
+          <h4 class="font-bold text-gray-900 mb-2 flex items-center space-x-2">
+            <i class="fas fa-poll-h text-orange-600"></i>
+            <span>Interactive Polls</span>
+          </h4>
+          <p class="text-sm text-gray-600 mb-3">
+            3 variants: emoji reactions, star rating, poll vote
+          </p>
+          <span
+            class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full"
+            >Premium</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Methods Section -->
+    <section id="methods" class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">API Methods</h2>
+
+      <div class="space-y-6">
+        <!-- export() -->
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <div class="p-4 bg-gray-50 border-b border-gray-200">
+            <code class="text-lg font-mono text-purple-600"
+              >builder.export(format)</code
+            >
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600 mb-4">
+              Export konten builder dalam format tertentu.
+            </p>
+            <div class="mb-4">
+              <h4 class="font-bold text-sm text-gray-700 mb-2">Parameters:</h4>
+              <div class="bg-gray-50 rounded-lg p-3">
+                <p class="text-sm text-gray-600">
+                  <code class="text-purple-600">format</code>
+                  (String) - Format export: 'json' atau 'html'
+                </p>
+              </div>
+            </div>
+            <div class="mb-4">
+              <h4 class="font-bold text-sm text-gray-700 mb-2">Returns:</h4>
+              <p class="text-sm text-gray-600">
+                String - Konten dalam format yang diminta
+              </p>
+            </div>
+            <div>
+              <h4 class="font-bold text-sm text-gray-700 mb-2">Contoh:</h4>
+              <div class="bg-gray-900 rounded-lg overflow-hidden">
+                <div class="bg-gray-800 px-4 py-2 border-b border-gray-700">
+                  <span class="text-gray-300 text-sm font-mono">JavaScript</span
+                  >
+                </div>
+                <pre
+                  class="p-4 overflow-x-auto"><code class="text-sm text-gray-300">// Export sebagai JSON
+const jsonData = builder.export('json');
+
+// Export sebagai HTML
+const htmlData = builder.export('html');</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- import() -->
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <div class="p-4 bg-gray-50 border-b border-gray-200">
+            <code class="text-lg font-mono text-purple-600"
+              >builder.import(data)</code
+            >
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600 mb-4">
+              Import konten ke builder dari JSON atau HTML.
+            </p>
+            <div class="mb-4">
+              <h4 class="font-bold text-sm text-gray-700 mb-2">Parameters:</h4>
+              <div class="bg-gray-50 rounded-lg p-3">
+                <p class="text-sm text-gray-600">
+                  <code class="text-purple-600">data</code> (String | Array | Object)
+                  - Data untuk di-import
+                </p>
+              </div>
+            </div>
+            <div class="mb-4">
+              <h4 class="font-bold text-sm text-gray-700 mb-2">Returns:</h4>
+              <p class="text-sm text-gray-600">
+                Boolean - true jika berhasil, false jika gagal
+              </p>
+            </div>
+            <div>
+              <h4 class="font-bold text-sm text-gray-700 mb-2">Contoh:</h4>
+              <CodeBlock
+                lang="JavaScript"
+                code={`
+                // Import dari JSON string
+                const jsonData = '{"content":[...]}';
+                builder.import(jsonData);
+
+                // Import dari HTML string
+                const htmlData = '&lt;div class="ef-preview-container"&gt;...&lt;/div&gt;';
+                builder.import(htmlData);
+
+                // Import dari Array
+                const arrayData = [{tag: 'h2', text: 'Hello'}];
+                builder.import(arrayData);
+              `}
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- getData() -->
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <div class="p-4 bg-gray-50 border-b border-gray-200">
+            <code class="text-lg font-mono text-purple-600"
+              >builder.getData()</code
+            >
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600 mb-4">
+              Dapatkan data mentah builder dalam format array.
+            </p>
+            <div class="mb-4">
+              <h4 class="font-bold text-sm text-gray-700 mb-2">Returns:</h4>
+              <p class="text-sm text-gray-600">
+                Array - Array of block objects
+              </p>
+            </div>
+            <div>
+              <h4 class="font-bold text-sm text-gray-700 mb-2">Contoh:</h4>
+              <CodeBlock
+                lang="JavaScript"
+                code={`
+                const data = builder.getData();
+                console.log(data);
+                // Output: [{tag: 'h2', text: '...'}, ...]
+              `}
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- setBuilderTheme() -->
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <div class="p-4 bg-gray-50 border-b border-gray-200">
+            <code class="text-lg font-mono text-purple-600"
+              >builder.setBuilderTheme(theme)</code
+            >
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600 mb-4">Ubah tema builder secara dinamis.</p>
+            <div class="mb-4">
+              <h4 class="font-bold text-sm text-gray-700 mb-2">Parameters:</h4>
+              <div class="bg-gray-50 rounded-lg p-3">
+                <p class="text-sm text-gray-600">
+                  <code class="text-purple-600">theme</code>
+                  (String | Object) - Nama tema atau custom theme object
+                </p>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-bold text-sm text-gray-700 mb-2">Contoh:</h4>
+              <CodeBlock
+                lang="JavaScript"
+                code={`
+                // Ganti ke tema preset
+                builder.setBuilderTheme('dark-professional');
+
+                // Atau gunakan custom theme
+                builder.setBuilderTheme({
+                    '--ef-bg': '#ffffff',
+                    '--ef-text-primary': '#000000'
+                });
+              `}
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- destroy() -->
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <div class="p-4 bg-gray-50 border-b border-gray-200">
+            <code class="text-lg font-mono text-purple-600"
+              >builder.destroy()</code
+            >
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600 mb-4">
+              Hapus builder dan bersihkan semua event listener.
+            </p>
+            <div>
+              <h4 class="font-bold text-sm text-gray-700 mb-2">Contoh:</h4>
+              <div class="bg-gray-900 rounded-lg overflow-hidden">
+                <div class="bg-gray-800 px-4 py-2 border-b border-gray-700">
+                  <span class="text-gray-300 text-sm font-mono">JavaScript</span
+                  >
+                </div>
+                <pre
+                  class="p-4 overflow-x-auto"><code class="text-sm text-gray-300">// Destroy builder
+builder.destroy();</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Events & Callbacks</h2>
+
+      <div class="space-y-6">
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <div class="p-4 bg-gray-50 border-b border-gray-200">
+            <code class="text-lg font-mono text-purple-600">onChange</code>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600 mb-4">
+              Dipanggil setiap kali konten builder berubah.
+            </p>
+            <CodeBlock
+              lang="JavaScript"
+              code={`
+                const builder = new EfArticleBuilder('#builder', {
+                    onChange: function(html) {
+                        console.log('Content changed:', html);
+                        // Simpan ke database, update preview, dll
+                    }
+                });
+            `}
+            />
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <div class="p-4 bg-gray-50 border-b border-gray-200">
+            <code class="text-lg font-mono text-purple-600">onReady</code>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600 mb-4">
+              Dipanggil saat builder selesai di-initialize dan siap digunakan.
+            </p>
+            <CodeBlock
+              lang="Javascript"
+              code={`
+                const builder = new EfArticleBuilder('#builder', {
+                    onReady: function(builderInstance) {
+                        console.log('Builder ready!');
+                        // Load initial content
+                        builderInstance.import(savedData);
+                    }
+                });
+            `}
+            />
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <div class="p-4 bg-gray-50 border-b border-gray-200">
+            <code class="text-lg font-mono text-purple-600">onSave</code>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600 mb-4">
+              Dipanggil saat user menyimpan konten.
+            </p>
+            <CodeBlock
+              lang="JavaScript"
+              code={`
+                const builder = new EfArticleBuilder('#builder', {
+                    onSave: function(data) {
+                        // Kirim ke server
+                        fetch('/api/save', {
+                            method: 'POST',
+                            body: JSON.stringify(data)
+                        });
+                    }
+                });
+            `}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Form Integration -->
+    <section id="form-integration" class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        Integrasi dengan Form HTML
+      </h2>
+
+      <p class="text-gray-600 mb-6">
+        EF Article Builder secara otomatis membuat hidden textarea dengan atribut
+        <code class="bg-gray-100 px-2 py-1 rounded text-sm text-purple-600"
+          >data-name</code
+        > yang Anda tentukan.
+      </p>
+
+      <div class="bg-gray-900 rounded-xl overflow-hidden mb-6">
+        <div class="bg-gray-800 px-4 py-2 border-b border-gray-700">
+          <span class="text-gray-300 text-sm font-mono">HTML + JavaScript</span>
+        </div>
+        <pre
+          class="p-4 overflow-x-auto"><code class="text-sm text-gray-300">&lt;form action="/submit" method="POST"&gt;
+    &lt;input type="text" name="title" placeholder="Judul"&gt;
+
+    &lt;!-- Builder akan membuat textarea dengan name="article_content" --&gt;
+    &lt;div id="my-builder" data-name="article_content"&gt;&lt;/div&gt;
+
+    &lt;button type="submit"&gt;Simpan&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+    const builder = new EfArticleBuilder('#my-builder');
+
+    // Hidden textarea akan ter-update otomatis
+    // saat konten builder berubah
+&lt;/script&gt;</code></pre>
+      </div>
+
+      <div class="bg-blue-50 border border-blue-200 rounded-xl p-6">
+        <div class="flex items-start space-x-3">
+          <i class="fas fa-lightbulb text-blue-600 text-xl mt-1"></i>
+          <div>
+            <h3 class="font-bold text-blue-900 mb-2">Tips</h3>
+            <p class="text-blue-800 text-sm">
+              Hidden textarea akan otomatis ter-update setiap kali ada perubahan
+              di builder, sehingga data siap dikirim saat form di-submit.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Custom Theme Example -->
+    <section id="custom-theme" class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        Membuat Custom Theme
+      </h2>
+
+      <p class="text-gray-600 mb-6">
+        Anda dapat membuat tema custom dengan mendefinisikan CSS variables:
+      </p>
+
+      <!-- <div class="bg-gray-900 rounded-xl overflow-hidden mb-6">
+                    <div class="bg-gray-800 px-4 py-2 border-b border-gray-700">
+                        <span class="text-gray-300 text-sm font-mono">JavaScript</span>
+                    </div>
+                    <pre class="p-4 overflow-x-auto"><code class="text-sm text-gray-300">const myCustomTheme = {
+    // Background & Cards
+    '--ef-bg': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    '--ef-card-bg': 'rgba(255, 255, 255, 0.1)',
+    '--ef-card-border': 'rgba(255, 255, 255, 0.2)',
+
+    // Typography
+    '--ef-text-primary': '#f8fafc',
+    '--ef-text-secondary': 'rgba(248, 250, 252, 0.8)',
+
+    // Code Block
+    '--ef-code-bg': 'rgba(0, 0, 0, 0.3)',
+    '--ef-code-text': '#4ade80',
+
+    // Tip Blocks
+    '--ef-tip-bg': 'rgba(255, 255, 255, 0.1)',
+    '--ef-tip-border': '#6366f1',
+
+    // CTA
+    '--ef-cta-bg': 'rgba(255, 255, 255, 0.1)',
+    '--ef-cta-text': '#f8fafc',
+    '--ef-cta-btn-primary': 'linear-gradient(135deg, #6366f1, #8b5cf6)',
+    '--ef-cta-btn-secondary': 'rgba(255, 255, 255, 0.1)',
+
+    // Table
+    '--ef-table-header-bg': 'rgba(255, 255, 255, 0.1)'
+};
+
+const builder = new EfArticleBuilder('#builder', {
+    builderTheme: myCustomTheme,
+    contentTheme: myCustomTheme
+});</code></pre>
+                </div> -->
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <h3 class="font-bold text-gray-900 mb-4">Daftar CSS Variables</h3>
+        <div class="grid md:grid-cols-2 gap-3 text-sm">
+          <div class="flex justify-between py-2 border-b border-gray-100">
+            <code class="text-purple-600">--ef-bg</code>
+            <span class="text-gray-600">Background utama</span>
+          </div>
+          <div class="flex justify-between py-2 border-b border-gray-100">
+            <code class="text-purple-600">--ef-card-bg</code>
+            <span class="text-gray-600">Background card</span>
+          </div>
+          <div class="flex justify-between py-2 border-b border-gray-100">
+            <code class="text-purple-600">--ef-card-border</code>
+            <span class="text-gray-600">Border card</span>
+          </div>
+          <div class="flex justify-between py-2 border-b border-gray-100">
+            <code class="text-purple-600">--ef-text-primary</code>
+            <span class="text-gray-600">Warna teks utama</span>
+          </div>
+          <div class="flex justify-between py-2 border-b border-gray-100">
+            <code class="text-purple-600">--ef-text-secondary</code>
+            <span class="text-gray-600">Warna teks sekunder</span>
+          </div>
+          <div class="flex justify-between py-2 border-b border-gray-100">
+            <code class="text-purple-600">--ef-code-bg</code>
+            <span class="text-gray-600">Background code block</span>
+          </div>
+          <div class="flex justify-between py-2 border-b border-gray-100">
+            <code class="text-purple-600">--ef-code-text</code>
+            <span class="text-gray-600">Warna teks code</span>
+          </div>
+          <div class="flex justify-between py-2 border-b border-gray-100">
+            <code class="text-purple-600">--ef-tip-bg</code>
+            <span class="text-gray-600">Background tip block</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Premium License -->
+    <section id="premium-license" class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        Aktivasi Premium License
+      </h2>
+
+      <div
+        class="bg-gradient-to-r from-purple-600 to-blue-500 text-white rounded-xl p-8 mb-6"
+      >
+        <h3 class="text-2xl font-bold mb-4">Upgrade ke Premium</h3>
+        <p class="text-purple-100 mb-6">
+          Dapatkan akses ke 40+ komponen premium dengan harga terjangkau
+        </p>
+        <div class="flex items-center space-x-6">
+          <div>
+            <div class="text-3xl font-bold">Rp 349k</div>
+            <div class="text-purple-100">per bulan</div>
+          </div>
+          <div class="h-12 w-px bg-white/30"></div>
+          <div>
+            <div class="text-lg font-semibold">40+ Komponen</div>
+            <div class="text-purple-100 text-sm">Update selamanya</div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-xl font-bold text-gray-900 mb-4">
+        Cara Aktivasi Premium
+      </h3>
+
+      <div class="space-y-4 mb-6">
+        <div class="flex items-start space-x-4">
+          <div
+            class="w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0"
+          >
+            1
+          </div>
+          <div>
+            <h4 class="font-bold text-gray-900 mb-1">Dapatkan License Key</h4>
+            <p class="text-gray-600 text-sm">
+              Beli license premium dan Anda akan mendapatkan license key via
+              email
+            </p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div
+            class="w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0"
+          >
+            2
+          </div>
+          <div>
+            <h4 class="font-bold text-gray-900 mb-1">
+              Tambahkan ke Konfigurasi
+            </h4>
+            <p class="text-gray-600 text-sm">
+              Masukkan license key saat initialize builder
+            </p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div
+            class="w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0"
+          >
+            3
+          </div>
+          <div>
+            <h4 class="font-bold text-gray-900 mb-1">Nikmati Fitur Premium</h4>
+            <p class="text-gray-600 text-sm">
+              Semua komponen premium akan otomatis aktif
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <CodeBlock
+        lang="JavaScript"
+        code={`
+        const builder = new EfArticleBuilder('#builder', {
+                                licenseKey: 'YOUR-LICENSE-KEY-HERE',
+                                apiEndpoint: 'https://api.yoursite.com/validate-license',
+                                onLicenseValidated: function(builder) {
+                                    console.log('Premium activated!');
+                                },
+                                onLicenseError: function(error) {
+                                    console.error('License error:', error);
+                                }
+                            });
+      `}
+      />
+
+      <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-6">
+        <div class="flex items-start space-x-3">
+          <i class="fas fa-shield-alt text-yellow-600 text-xl mt-1"></i>
+          <div>
+            <h3 class="font-bold text-yellow-900 mb-2">License Validation</h3>
+            <p class="text-yellow-800 text-sm mb-2">
+              Library akan otomatis memvalidasi license key ke server Anda.
+              Pastikan endpoint API sudah di-setup dengan benar.
+            </p>
+            <p class="text-yellow-800 text-sm">
+              Jika validasi gagal, builder akan tetap berjalan dengan fitur
+              gratis.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Troubleshooting -->
+    <section id="troubleshooting" class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Troubleshooting</h2>
+
+      <div class="space-y-6">
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <div class="p-4 bg-red-50 border-b border-red-200">
+            <h3 class="font-bold text-gray-900 flex items-center space-x-2">
+              <i class="fas fa-exclamation-circle text-red-600"></i>
+              <span>Builder tidak muncul / blank</span>
+            </h3>
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-sm text-gray-700 mb-3">Penyebab Umum:</h4>
+            <ul class="space-y-2 mb-4">
+              <li class="flex items-start space-x-2">
+                <i class="fas fa-circle text-xs text-gray-400 mt-1.5"></i>
+                <span class="text-sm text-gray-600"
+                  >CSS file tidak ter-load dengan benar</span
+                >
+              </li>
+              <li class="flex items-start space-x-2">
+                <i class="fas fa-circle text-xs text-gray-400 mt-1.5"></i>
+                <span class="text-sm text-gray-600"
+                  >JavaScript error sebelum initialize</span
+                >
+              </li>
+              <li class="flex items-start space-x-2">
+                <i class="fas fa-circle text-xs text-gray-400 mt-1.5"></i>
+                <span class="text-sm text-gray-600"
+                  >Container selector salah</span
+                >
+              </li>
+            </ul>
+            <h4 class="font-bold text-sm text-gray-700 mb-3">Solusi:</h4>
+            <div
+              class="bg-gray-50 rounded-lg p-4 text-sm text-gray-600 space-y-2"
+            >
+              <p>
+                1. Pastikan file CSS sudah ter-load di <code
+                  class="bg-gray-200 px-2 py-1 rounded">&lt;head&gt;</code
+                >
+              </p>
+              <p>2. Cek console browser untuk error JavaScript</p>
+              <p>
+                3. Pastikan selector container benar (<code
+                  class="bg-gray-200 px-2 py-1 rounded">#my-builder</code
+                >)
+              </p>
+              <p>
+                4. Initialize setelah DOM ready atau gunakan <code
+                  class="bg-gray-200 px-2 py-1 rounded">onReady</code
+                > callback
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <div class="p-4 bg-orange-50 border-b border-orange-200">
+            <h3 class="font-bold text-gray-900 flex items-center space-x-2">
+              <i class="fas fa-exclamation-triangle text-orange-600"></i>
+              <span>Komponen premium tidak muncul</span>
+            </h3>
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-sm text-gray-700 mb-3">Penyebab:</h4>
+            <ul class="space-y-2 mb-4">
+              <li class="flex items-start space-x-2">
+                <i class="fas fa-circle text-xs text-gray-400 mt-1.5"></i>
+                <span class="text-sm text-gray-600"
+                  >License key tidak valid</span
+                >
+              </li>
+              <li class="flex items-start space-x-2">
+                <i class="fas fa-circle text-xs text-gray-400 mt-1.5"></i>
+                <span class="text-sm text-gray-600"
+                  >Premium script tidak ter-load</span
+                >
+              </li>
+              <li class="flex items-start space-x-2">
+                <i class="fas fa-circle text-xs text-gray-400 mt-1.5"></i>
+                <span class="text-sm text-gray-600"
+                  >API endpoint tidak tersedia</span
+                >
+              </li>
+            </ul>
+            <h4 class="font-bold text-sm text-gray-700 mb-3">Solusi:</h4>
+            <div
+              class="bg-gray-50 rounded-lg p-4 text-sm text-gray-600 space-y-2"
+            >
+              <p>
+                1. Cek <code class="bg-gray-200 px-2 py-1 rounded"
+                  >onLicenseError</code
+                > callback untuk error message
+              </p>
+              <p>2. Pastikan license key benar dan masih aktif</p>
+              <p>3. Pastikan API endpoint bisa diakses</p>
+              <p>4. Cek console untuk log validasi license</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <div class="p-4 bg-blue-50 border-b border-blue-200">
+            <h3 class="font-bold text-gray-900 flex items-center space-x-2">
+              <i class="fas fa-question-circle text-blue-600"></i>
+              <span>Hidden textarea tidak ter-update</span>
+            </h3>
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-sm text-gray-700 mb-3">Solusi:</h4>
+            <div
+              class="bg-gray-50 rounded-lg p-4 text-sm text-gray-600 space-y-2"
+            >
+              <p>
+                1. Pastikan Anda menggunakan atribut <code
+                  class="bg-gray-200 px-2 py-1 rounded">data-name</code
+                > pada container
+              </p>
+              <p>
+                2. Hidden textarea akan otomatis dibuat dengan name sesuai <code
+                  class="bg-gray-200 px-2 py-1 rounded">data-name</code
+                >
+              </p>
+              <p>3. Update otomatis setiap kali ada perubahan di builder</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg mt-4 overflow-hidden">
+              <pre
+                class="p-3 text-xs text-gray-300"><code>&lt;div id="builder" data-name="article_content"&gt;&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <div class="p-4 bg-purple-50 border-b border-purple-200">
+            <h3 class="font-bold text-gray-900 flex items-center space-x-2">
+              <i class="fas fa-palette text-purple-600"></i>
+              <span>Theme tidak berubah</span>
+            </h3>
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-sm text-gray-700 mb-3">Solusi:</h4>
+            <div
+              class="bg-gray-50 rounded-lg p-4 text-sm text-gray-600 space-y-2"
+            >
+              <p>
+                1. Gunakan method <code class="bg-gray-200 px-2 py-1 rounded"
+                  >setBuilderTheme()</code
+                > untuk mengubah theme secara dinamis
+              </p>
+              <p>
+                2. Pastikan nama theme benar: glassmorphism, simple-modern,
+                colorful, dark-professional
+              </p>
+              <p>
+                3. Untuk custom theme, pastikan semua CSS variables
+                didefinisikan
+              </p>
+              <p>4. Cek apakah ada CSS custom yang override theme</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        Frequently Asked Questions
+      </h2>
+
+      <div class="space-y-4">
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <button
+            class="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+            onclick="this.parentElement.classList.toggle('faq-open')"
+          >
+            <h3 class="font-bold text-gray-900">
+              Apakah EF Article Builder gratis?
+            </h3>
+            <i class="fas fa-chevron-down text-gray-400 transition-transform"
+            ></i>
+          </button>
+          <div class="faq-content hidden p-6 pt-0 border-t border-gray-100">
+            <p class="text-gray-600">
+              Ya, versi gratis tersedia dengan 15 komponen dasar. Untuk fitur
+              lengkap dengan 40+ komponen premium, tersedia license berbayar
+              mulai dari Rp 349k/bulan.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <button
+            class="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+            onclick="this.parentElement.classList.toggle('faq-open')"
+          >
+            <h3 class="font-bold text-gray-900">Apakah perlu jQuery?</h3>
+            <i class="fas fa-chevron-down text-gray-400 transition-transform"
+            ></i>
+          </button>
+          <div class="faq-content hidden p-6 pt-0 border-t border-gray-100">
+            <p class="text-gray-600">
+              Tidak. EF Article Builder adalah vanilla JavaScript dan tidak
+              memerlukan jQuery atau library lainnya. Hanya memerlukan
+              FontAwesome untuk icon.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <button
+            class="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+            onclick="this.parentElement.classList.toggle('faq-open')"
+          >
+            <h3 class="font-bold text-gray-900">
+              Bisakah digunakan di multiple halaman?
+            </h3>
+            <i class="fas fa-chevron-down text-gray-400 transition-transform"
+            ></i>
+          </button>
+          <div class="faq-content hidden p-6 pt-0 border-t border-gray-100">
+            <p class="text-gray-600">
+              Ya, Anda bisa membuat multiple instance builder di halaman yang
+              sama dengan selector yang berbeda. Setiap instance bekerja
+              independen.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <button
+            class="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+            onclick="this.parentElement.classList.toggle('faq-open')"
+          >
+            <h3 class="font-bold text-gray-900">
+              Bagaimana cara backup konten?
+            </h3>
+            <i class="fas fa-chevron-down text-gray-400 transition-transform"
+            ></i>
+          </button>
+          <div class="faq-content hidden p-6 pt-0 border-t border-gray-100">
+            <p class="text-gray-600">
+              Gunakan method <code class="bg-gray-100 px-2 py-1 rounded"
+                >export('json')</code
+              > untuk mendapatkan data dalam format JSON. Simpan di database atau
+              file. Untuk restore, gunakan method <code
+                class="bg-gray-100 px-2 py-1 rounded">import()</code
+              >.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <button
+            class="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+            onclick="this.parentElement.classList.toggle('faq-open')"
+          >
+            <h3 class="font-bold text-gray-900">
+              Apakah responsive di mobile?
+            </h3>
+            <i class="fas fa-chevron-down text-gray-400 transition-transform"
+            ></i>
+          </button>
+          <div class="faq-content hidden p-6 pt-0 border-t border-gray-100">
+            <p class="text-gray-600">
+              Ya, builder dan semua komponennya fully responsive. Drag-and-drop
+              tetap berfungsi di touch screen mobile device.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <button
+            class="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+            onclick="this.parentElement.classList.toggle('faq-open')"
+          >
+            <h3 class="font-bold text-gray-900">
+              Bagaimana dengan browser support?
+            </h3>
+            <i class="fas fa-chevron-down text-gray-400 transition-transform"
+            ></i>
+          </button>
+          <div class="faq-content hidden p-6 pt-0 border-t border-gray-100">
+            <p class="text-gray-600">
+              EF Article Builder mendukung semua browser modern: Chrome, Firefox,
+              Safari, Edge (versi terbaru). Memerlukan browser dengan support
+              ES6.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <button
+            class="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+            onclick="this.parentElement.classList.toggle('faq-open')"
+          >
+            <h3 class="font-bold text-gray-900">
+              Bisakah menambah komponen custom?
+            </h3>
+            <i class="fas fa-chevron-down text-gray-400 transition-transform"
+            ></i>
+          </button>
+          <div class="faq-content hidden p-6 pt-0 border-t border-gray-100">
+            <p class="text-gray-600">
+              Saat ini belum support untuk komponen custom. Namun Anda bisa
+              request fitur atau komponen baru melalui GitHub issues atau email
+              support.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <button
+            class="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+            onclick="this.parentElement.classList.toggle('faq-open')"
+          >
+            <h3 class="font-bold text-gray-900">
+              Apakah ada support untuk WordPress?
+            </h3>
+            <i class="fas fa-chevron-down text-gray-400 transition-transform"
+            ></i>
+          </button>
+          <div class="faq-content hidden p-6 pt-0 border-t border-gray-100">
+            <p class="text-gray-600">
+              Plugin WordPress sedang dalam development. Saat ini Anda bisa
+              mengintegrasikan secara manual dengan menambahkan script di theme
+              WordPress Anda.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support Section -->
+    <section class="mb-16">
+      <div
+        class="bg-gradient-to-r from-purple-600 to-blue-500 text-white rounded-2xl p-8 text-center"
+      >
+        <i class="fas fa-question-circle text-5xl mb-4"></i>
+        <h2 class="text-3xl font-bold mb-4">Butuh Bantuan?</h2>
+        <p class="text-lg text-purple-100 mb-6 max-w-2xl mx-auto">
+          Jika Anda memiliki pertanyaan atau mengalami kendala, jangan ragu
+          untuk menghubungi kami
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a
+            href="mailto:support@efbuilder.com"
+            class="px-6 py-3 bg-white text-purple-600 rounded-lg font-semibold hover:shadow-lg transition-all inline-flex items-center space-x-2"
+          >
+            <i class="fas fa-envelope"></i>
+            <span>Email Support</span>
+          </a>
+          <a
+            href="#"
+            class="px-6 py-3 bg-white/20 text-white rounded-lg font-semibold hover:bg-white/30 transition-all inline-flex items-center space-x-2"
+          >
+            <i class="fab fa-github"></i>
+            <span>GitHub Issues</span>
+          </a>
+          <a
+            href="#"
+            class="px-6 py-3 bg-white/20 text-white rounded-lg font-semibold hover:bg-white/30 transition-all inline-flex items-center space-x-2"
+          >
+            <i class="fab fa-discord"></i>
+            <span>Discord Community</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Version History -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Version History</h2>
+
+      <div class="space-y-4">
+        <div class="bg-white border-l-4 border-purple-600 rounded-lg p-6">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-bold text-gray-900">v1.0.0 - Current</h3>
+            <span class="text-sm text-gray-500">Oktober 2024</span>
+          </div>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-start space-x-2">
+              <i class="fas fa-check text-green-500 mt-0.5"></i>
+              <span>Initial release dengan 15 komponen gratis</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <i class="fas fa-check text-green-500 mt-0.5"></i>
+              <span>40+ komponen premium</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <i class="fas fa-check text-green-500 mt-0.5"></i>
+              <span>4 tema siap pakai + custom theme support</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <i class="fas fa-check text-green-500 mt-0.5"></i>
+              <span>Drag & drop interface</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <i class="fas fa-check text-green-500 mt-0.5"></i>
+              <span>Live preview mode</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <i class="fas fa-check text-green-500 mt-0.5"></i>
+              <span>Export HTML/JSON</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <i class="fas fa-check text-green-500 mt-0.5"></i>
+              <span>Import HTML/JSON</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</DocumentationLayout>/
